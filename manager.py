@@ -12,14 +12,16 @@ def main():
     image_dir = 'output/temp/'
     output_dir = 'output/code_img/'
     file_name = "code_img"
+    crop_area = (118, 0, 1600, 2195)
 
-    crop.crop_code(image_dir, output_dir, file_name)
+    crop.crop(image_dir, output_dir, file_name, crop_area)
 
     image_dir = 'output/temp/'
     output_dir = "output/name_img/"
     file_name = "name_img"
+    crop_area = (0, 0, 850, 110)
 
-    crop.crop_name(image_dir, output_dir, file_name)
+    crop.crop(image_dir, output_dir, file_name, crop_area)
 
     input_dir = "output/name_img/"
     output_dir = "output/code_img/"
