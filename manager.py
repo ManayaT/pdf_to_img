@@ -11,7 +11,13 @@ def main():
     image_dir = 'output/01/'
     output_dir = 'output/test/'
 
-    crop.crop_image(image_dir, output_dir, file_name)
+    crop.crop_code(image_dir, output_dir, file_name)
+
+    output_dir = 'output/test/'
+    output_dir = "output/file_name_test/"
+    file_name = "name"
+
+    crop.crop_name(image_dir, output_dir, file_name)
 
 if __name__ == "__main__":
     main()
