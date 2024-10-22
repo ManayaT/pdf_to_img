@@ -3,7 +3,7 @@ import os
 
 image_extensions = ('.jpg', '.jpeg', '.png', '.bmp', '.gif')
 
-def crop_code(image_dir, output_dir, file_name):
+def crop_code(image_dir, output_dir, file_name, crop_area=(118, 0, 1600, 2195)):
     if not os.path.exists(image_dir):
         exit()
 
@@ -16,9 +16,6 @@ def crop_code(image_dir, output_dir, file_name):
                 image_path = os.path.join(image_dir, filename)
 
                 image = Image.open(image_path)
-
-                # 領域の座標 (左, 上, 右, 下)
-                crop_area = (118, 0, 1600, 2195)
 
                 cropped_image = image.crop(crop_area)
 
@@ -30,7 +27,7 @@ def crop_code(image_dir, output_dir, file_name):
         return False
 
 
-def crop_name(image_dir, output_dir, file_name):
+def crop_name(image_dir, output_dir, file_name, crop_area=(0, 0, 850, 110)):
 
     if not os.path.exists(image_dir):
         exit()
@@ -44,9 +41,6 @@ def crop_name(image_dir, output_dir, file_name):
                 image_path = os.path.join(image_dir, filename)
 
                 image = Image.open(image_path)
-
-                # 領域の座標 (左, 上, 右, 下)
-                crop_area = (0, 0, 850, 110)
 
                 cropped_image = image.crop(crop_area)
 
