@@ -1,9 +1,9 @@
 from PIL import Image, ImageDraw
 import os
 
-def crop_code(image_dir, output_dir, file_name):
-    image_extensions = ('.jpg', '.jpeg', '.png', '.bmp', '.gif')
+image_extensions = ('.jpg', '.jpeg', '.png', '.bmp', '.gif')
 
+def crop_code(image_dir, output_dir, file_name):
     if not os.path.exists(image_dir):
         exit()
 
@@ -29,8 +29,8 @@ def crop_code(image_dir, output_dir, file_name):
         #print(f"{e}")
         return False
 
+
 def crop_name(image_dir, output_dir, file_name):
-    image_extensions = ('.jpg', '.jpeg', '.png', '.bmp', '.gif')
 
     if not os.path.exists(image_dir):
         exit()
