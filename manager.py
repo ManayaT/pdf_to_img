@@ -7,27 +7,38 @@ def main():
     output_dir = "output/temp/"
     file_name = "raw_img"
 
-    convert.pdf_to_images(pdf_path, output_dir, file_name)
+    print("call: pdf_to_images")
+    #convert.pdf_to_images(pdf_path, output_dir, file_name)
 
     image_dir = 'output/temp/'
     output_dir = 'output/code_img/'
     file_name = "code_img"
     crop_area = (118, 0, 1600, 2195)
 
-    crop.crop(image_dir, output_dir, file_name, crop_area)
+    print("call: crop")
+    #crop.crop(image_dir, output_dir, file_name, crop_area)
 
     image_dir = 'output/temp/'
     output_dir = "output/name_img/"
     file_name = "name_img"
     crop_area = (0, 0, 850, 110)
 
-    crop.crop(image_dir, output_dir, file_name, crop_area)
+    print("call: crop")
+    #crop.crop(image_dir, output_dir, file_name, crop_area)
 
     input_dir = "output/name_img/"
     output_dir = "output/code_img/"
 
+    print("call: det_name")
     # コード画像のファイル名変更
-    detection.det_name(input_dir, output_dir)
+    #detection.det_name(input_dir, output_dir)
+
+    input_dir = "output/name_img/"
+    output_dir = "output/split_dir/"
+    print("call: make_dir")
+    detection.make_dir(input_dir, output_dir)
+
+    
 
 if __name__ == "__main__":
     main()
