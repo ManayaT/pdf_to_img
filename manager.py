@@ -9,7 +9,7 @@ def main():
     file_name = "raw_img"
 
     print("call: pdf_to_images")
-    #convert.pdf_to_images(pdf_path, output_dir, file_name)
+    convert.pdf_to_images(pdf_path, output_dir, file_name)
 
     image_dir = 'output/temp/'
     output_dir = 'output/code_img/'
