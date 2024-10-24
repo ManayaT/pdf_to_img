@@ -1,11 +1,7 @@
 import shutil, os
+from natsort import natsorted as nat
 
-target = "output/code_img/sample01-01.php_16.png"
-destination = "output/split_dir/sample01-01_php"
-shutil.move(target, destination)
-
-def det_name(target_dir, dest_dir):
-    image_extensions = ('.jpg', '.jpeg', '.png', '.bmp', '.gif')
+def move_img_to_dir(target_dir, dest_dir):
 
     if not os.path.exists(target_dir):
         return False
@@ -14,16 +10,55 @@ def det_name(target_dir, dest_dir):
         return False
 
     try:
-        target = os.listdir(dest_dir)
+        i = 0
+        dest_name = nat(os.listdir(dest_dir))
 
-        for i, filename in enumerate(os.listdir(target_dir)):
-            if filename.lower().endswith(image_extensions):
+        for target in nat(os.listdir(target_dir)):
+            while True:
+                if dest_name[i].replace("_", ".") in target:
+                    print(f"{dest_name[i].replace('_', '.')} in {target}")
 
-                image_path = os.path.join(target_dir, filename)
-                target_path = os.path.join(dest_dir, target[i])
+                    target_path = os.path.join(target_dir, target)
+                    dest_path = os.path.join(dest_dir, dest_name[i])
 
+                    shutil.move(target_path, dest_path)
+                    break
+                else:
+                    i += 1
+
+    except Exception as e:
+        print(e)
+    
+
+def move_img_to(target_dir, dest_dir):
+
+    if not os.path.exists(target_dir):
+        return False
+
+    if not os.path.exists(dest_dir):
+        return False
+
+    try:
+
+        # target_dir = "output/code_img/" <-複雑
+        # destination_dir = "output/split_dir/" <-単純
+        dest_name = os.listdir(dest_dir)
+
+        for target in os.listdir(target_dir):
+            # print(f"target: {target}")
+            # print(f"dest_name: {dest_name}")
+            print(target.split("_"))
+            num = dest_name.index(target.replace("_", "."))
+            print("err")
+
+            target_path = os.path.join(target_dir, target)
+            dest_path = os.path.join(dest_dir, dest_name[num])
+
+            print(f"shutil.move({target_path}, {dest_path})")
+            #shutil.move(target_path, dest_path)
 
         return True
+    
     except Exception as e:
-        #print(f"{e}")
+        print(f"{e}")
         return False
