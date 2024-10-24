@@ -39,23 +39,22 @@ def move_img_to(target_dir, dest_dir):
         return False
 
     try:
+        target = os.listdir(target_dir)
+        modified_target = [name.replace(".", "_") for name in target]
 
-        # target_dir = "output/code_img/" <-複雑
-        # destination_dir = "output/split_dir/" <-単純
-        dest_name = os.listdir(dest_dir)
+        for dest in os.listdir(dest_dir):
+            modified_dest = dest.replace(".", "_")
+            indices = [i for i, s in enumerate(modified_target) if modified_dest in s]
 
-        for target in os.listdir(target_dir):
-            # print(f"target: {target}")
-            # print(f"dest_name: {dest_name}")
-            print(target.split("_"))
-            num = dest_name.index(target.replace("_", "."))
-            print("err")
+            # for element in indices:
+            #     temp2 = dest.replace(".", "_")
+            #     print(f"{temp2} : {modified_target[element]}")
 
-            target_path = os.path.join(target_dir, target)
-            dest_path = os.path.join(dest_dir, dest_name[num])
+            dest_path = os.path.join(dest_dir, dest)
 
-            print(f"shutil.move({target_path}, {dest_path})")
-            #shutil.move(target_path, dest_path)
+            for index in indices:
+                target_path = os.path.join(target_dir, target[index])
+                shutil.move(target_path, dest_path)
 
         return True
     
