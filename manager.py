@@ -42,7 +42,7 @@ def main():
     target_dir = "output/code_img/"
     destination_dir = "output/split_dir/"
     print("call: move_img_to_dir")
-    move.move_img_to(target_dir, destination_dir)
+    move.move_img_to_dir(target_dir, destination_dir)
     
 
 if __name__ == "__main__":
