@@ -3,6 +3,7 @@
 ![Static Badge](https://img.shields.io/badge/PIL-black)
 ![Static Badge](https://img.shields.io/badge/pytesseract-black)
 ![Static Badge](https://img.shields.io/badge/pdf2image-black)
+![Static Badge](https://img.shields.io/badge/poppler-brown)
 
 # pdf_to_img
 
@@ -32,3 +33,11 @@ pdfを画像に変換して，特定領域を新たな画像として抽出し�
     └── pdf_to_img.py
 ```
 
+## ライブラリのインストール
+```
+
+
+```
+```
+brew install poppler
+```
