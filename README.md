@@ -31,6 +31,7 @@ pdfを画像に変換して，特定領域を新たな画像として抽出し�
     ├── det_name.py
     ├── img_crop.py
     └── pdf_to_img.py
+    └── requirements.txt
 ```
 
 ## ライブラリのインストール
