@@ -4,7 +4,7 @@ from modules import det_name as detection
 from modules import move_dir as move
 
 def main():
-    pdf_path = "input/Kadai3-2024.pdf"
+    pdf_path = "input/LINK.pdf"
     output_dir = "output/temp/"
     file_name = "raw_img"
 
@@ -14,7 +14,8 @@ def main():
     image_dir = 'output/temp/'
     output_dir = 'output/code_img/'
     file_name = "code_img"
-    crop_area = (118, 0, 1600, 2195)
+    #crop_area = (118, 0, 1600, 2195) # No.01
+    crop_area = (175, 0, 1530, 2165)
 
     print("call: crop")
     crop.crop(image_dir, output_dir, file_name, crop_area)
@@ -22,7 +23,8 @@ def main():
     image_dir = 'output/temp/'
     output_dir = "output/name_img/"
     file_name = "name_img"
-    crop_area = (0, 0, 850, 110)
+    #crop_area = (0, 0, 850, 110) # No.01
+    crop_area = (175, 2175, 1560, 2250)
 
     print("call: crop")
     crop.crop(image_dir, output_dir, file_name, crop_area)
